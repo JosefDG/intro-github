@@ -1,0 +1,281 @@
+
+*{
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+/*cuando lo dejamos al 100% asume que 1rem son 16px
+al poner la raíz en 62.5% por regla de 3 simple 1rem son 10px
+los textos se usan en rem o em por modelo responsive */
+   
+font-size: 62.5%;
+}
+
+body{
+    background-image: none; /*cambiar*/
+    background-repeat: repeat;
+    background-position: center top;
+    background-attachment: fixed;
+}
+h2, h3, h4{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 132 211 500;
+}
+p{
+	color:black;
+	line-height: 3rem;
+	font-size: 3rem;
+}
+
+.contenedorIndex{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:  "nav nav nav" 
+                          "header header header"
+                          "main main main"
+                          "footer footer footer";
+  }
+
+/* media queries */
+@media screen and (min-width: 768px) {
+	body{
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: 10vh 85hv 5vh;
+		grid-template-areas: "nav nav nav" 
+							 "header main main"
+                             "footer footer footer";	
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	body{
+		grid-template-columns: 5vw 70vw 25vw;
+		grid-template-rows: auto auto auto auto;
+		grid-template-areas:"nav nav nav"
+                            "header header header"
+                            "main main main"
+                            "footer footer footer";
+	}
+	
+}
+/*al principio hice dos contenedores para cada html, pero no se si está ok*/
+/*.contenedorLineUp{ 
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  
+    grid-template-rows: auto auto auto;
+    grid-template-areas:  "nav nav nav" 
+                          "main main main"
+                          "footer footer footer";
+  }*/
+
+/* media queries */
+/*@media screen and (min-width: 768px) {
+	body{
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: 10vh 85hv 5vh;
+		grid-template-areas: "nav nav nav" 
+							 "main main main"
+                             "footer footer footer";	
+	}
+}*/
+
+/*@media screen and (min-width: 1024px) {
+	body{
+		grid-template-columns: 5vw 70vw 25vw;
+		grid-template-rows: auto auto auto;
+		grid-template-areas:"nav nav nav"
+                            "main main main"
+                            "footer footer footer";
+	}
+	
+}*/
+
+
+/* selector de ID*/
+
+#Nav{
+    grid-area: nav;
+}
+#Header{
+    grid-area: header;
+}
+#Main{
+    grid-area: main;
+}
+#Footer{
+    grid-area: footer;
+}
+
+/*selectores de etiqueta*/
+/*inicia botonera*/
+
+.botonera{
+background-color: rgba(248, 214, 64, 0.788); /*no logro hacer que aparezca*/
+position: sticky;
+padding: 10px 30px;
+width: 100%; 
+text-align: right;
+display: flex;
+align-items: center;
+}
+    .botonera img{
+    image-orientation: left; 
+    width: auto;
+	margin-bottom: 5px;
+    }
+        .botonera ul{
+        display:inline-block;
+        }       
+            .botonera ul li{
+            list-style: none;
+            display: inline-block;
+            font-size: 1.9rem; 
+            margin-right: 15px;
+            margin-left: 15px;
+            height: 20px;
+            vertical-align: middle;
+            }
+                .botonera ul li a{
+                text-decoration: none;
+                color: rgb(0, 0, 0); 
+                font-weight: 300;
+                line-height: 2.4rem;
+                text-align: right;
+                }
+                    .botonera ol li a:hover{
+			        color: brown;
+			        font-weight: 600;
+		            }
+   
+
+
+.main section article h2{
+    text-decoration: none;
+    font-size: 4rem;
+    color: rgb(44, 44, 8);
+    font-weight: 100; 
+    line-height: 5rem;
+    background-color: rgb(248, 214, 64);
+    }
+.main section h2{
+    text-decoration: none;
+    font-size: 4rem;
+    color: rgb(44, 44, 8);
+    font-weight: 100; 
+    line-height: 5rem;
+    background-color: rgb(248, 214, 64);
+     }        
+.footer h4{
+    text-decoration: none;
+    font-size: 4rem;
+    color: rgb(44, 44, 8);
+    font-weight: 100; 
+    line-height: 2.2rem;
+    background-color: rgb(248, 214, 64);
+}
+     
+/*selector de clase*/
+
+.textCenter{
+    text-align: center;
+}
+.textRight{
+    text-align: right;
+}
+.textItalic{
+    font-style: italic;
+}
+.textBold{
+    font-style: bold;
+}
+
+
+/*box model*/
+
+/*box sizing*/
+
+.scroll__fotos{
+    width: 100%;
+    height:auto;
+    margin: 10px 10px;
+    padding: 5px 5px;
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 5px;
+    border-color: white;
+    image-orientation: center;
+}
+
+.conectar{
+    width: 100%;
+    height: auto;
+    margin: 10px 10px;
+    padding: 5px 5px;
+    box-sizing: border-box;
+    border-style: none;
+    border-width: 200px;
+    border-color: none;
+    font-weight: 500; 
+    background-color: rgb(248, 214, 64) ;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.line__up{
+    width: 100%;
+    height: auto;
+    margin: 60px 60px;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    border-style: none;
+    border-width: 1px;
+    border-color: none;
+    image-orientation: center;
+} 
+
+.registro_contacto{
+    width: 50%;
+    height: auto;
+    margin: 10px auto;
+    padding: 10px 10px;
+    border-style: none; 
+    font-size: 1.5rem;     
+}   
+.googlemaps{
+    width: 50%;
+    height: 30px;
+    margin: 10px 10px;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    border-style: none;      
+}      
+
+/*bem*/
+
+.pie{
+    padding: 0 0;
+}
+.pie__img--sm{
+    width: 40px;
+}
+
+.pie__tit--md{
+    font-size: 2rem;
+    text-align: center;
+    display: inline-block;
+    background-color:rgb(248, 214, 64) ;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
